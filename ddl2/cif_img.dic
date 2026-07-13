@@ -8225,6 +8225,7 @@ save_DIFFRN_REFLN
     _category_key.name             '_diffrn_refln.diffrn_id'
                                    '_diffrn_refln.id'
                                    '_diffrn_refln.frame_id'
+                                   '_diffrn_refln.frame_detector_element_id'
                                    '_diffrn_refln.variant'
      loop_
     _category_group.id             'inclusive_group'
