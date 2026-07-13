@@ -5877,6 +5877,7 @@ save_DIFFRN_DATA_FRAME
      loop_
     _category_key.name             '_diffrn_data_frame.id'
                                    '_diffrn_data_frame.detector_element_id'
+                                   '_diffrn_data_frame.detector_element_detector_id'
                                    '_diffrn_data_frame.variant'
      loop_
     _category_group.id             'inclusive_group'
