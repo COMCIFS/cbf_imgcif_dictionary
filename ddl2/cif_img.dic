@@ -7161,6 +7161,7 @@ save_DIFFRN_MEASUREMENT_AXIS
                               '_diffrn_measurement_axis.measurement_device'
                               '_diffrn_measurement_axis.measurement_id'
                               '_diffrn_measurement_axis.axis_id'
+                              '_diffrn_measurement_axis.axis_equipment'
                               '_diffrn_measurement_axis.variant'
      loop_
     _category_group.id        'inclusive_group'
