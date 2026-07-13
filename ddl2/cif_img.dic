@@ -3355,6 +3355,7 @@ save_ARRAY_STRUCTURE_LIST_AXIS
     _category_key.name
                                   '_array_structure_list_axis.axis_set_id'
                                   '_array_structure_list_axis.axis_id'
+                                  '_array_structure_list_axis.axis_equipment'
                                   '_array_structure_list_axis.variant'
      loop_
     _category_group.id           'inclusive_group'
