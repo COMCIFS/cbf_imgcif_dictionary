@@ -3014,6 +3014,8 @@ save__array_structure_list_section.array_id
     _item_linked.parent_name
            '_diffrn_data_frame.array_section_array_id'
                                '_array_structure_list_section.array_id'
+           '_map_segment.array_section_array_id'
+                               '_array_structure_list_section.array_id'
 save_
 save__array_structure_list_section.end
     _item_description.description
@@ -11291,6 +11293,16 @@ save__map_segment.array_id
               ARRAY_STRUCTURE category.
 ;
     _item.name                  '_map_segment.array_id'
+    _item.category_id             map_segment
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
+save__map_segment.array_section_array_id
+    _item_description.description
+;             This item is a pointer to _array_structure_list_section.array_id
+              in the ARRAY_STRUCTURE_LIST_SECTION category.
+;
+    _item.name                  '_map_segment.array_section_array_id'
     _item.category_id             map_segment
     _item.mandatory_code          implicit
     _item_type.code               code
