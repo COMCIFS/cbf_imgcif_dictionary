@@ -6092,7 +6092,7 @@ save__diffrn_data_frame.detector_element_id
                                '_diffrn_data_frame.detector_element_id'
            '_diffrn_scan.frame_detector_element_id_start'
                                '_diffrn_data_frame.detector_element_id'
-           '_diffrn_scan.frame_detector_element_id'
+           '_diffrn_scan_frame.frame_detector_element_id'
                                '_diffrn_data_frame.detector_element_id'
            '_diffrn_scan_frame_axis.frame_detector_element_id'
                                '_diffrn_data_frame.detector_element_id'
@@ -9684,12 +9684,12 @@ save__diffrn_scan_frame.diffrn_id
     _item.mandatory_code          implicit
     _item_type.code               code
      save_
-save__diffrn_scan.frame_detector_element_id
+save__diffrn_scan_frame.frame_detector_element_id
     _item_description.description
 ;             This item is a pointer to _diffrn_data_frame.detector_element_id
               in the DIFFRN_DATA_FRAME category.
 ;
-    _item.name                  '_diffrn_scan.frame_detector_element_id'
+    _item.name                  '_diffrn_scan.frame.frame_detector_element_id'
     _item.category_id             diffrn_scan
     _item.mandatory_code          implicit
     _item_type.code               code
