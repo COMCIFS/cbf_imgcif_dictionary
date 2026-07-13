@@ -11264,6 +11264,8 @@ save_MAP_SEGMENT
     _category.mandatory_code       no
      loop_
     _category_key.name             '_map_segment.id'
+                                   '_map_segment.diffrn_id'
+                                   '_map_segment.entry_id'
                                    '_map_segment.map_id'
                                    '_map_segment.variant'
      loop_
