@@ -2761,6 +2761,16 @@ save__array_structure_list.array_section_id
     _item.mandatory_code          implicit
     _item_type.code               code
 save_
+save__array_structure_list.axis_id
+    _item_description.description
+;             This item is a pointer to _array_structure_list_axis.axis_id
+              in the ARRAY_STRUCTURE_LIST category.
+;
+    _item.name                  '_array_structure_list.axis_id'
+    _item.category_id             array_structure_list
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
 save__array_structure_list.axis_set_id
     _item_description.description
 ;             This is a descriptor for the physical axis or set of axes
@@ -2998,6 +3008,14 @@ save__array_structure_list_section.array_id
     _item.category_id             array_structure_list_section
     _item.mandatory_code          implicit
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_data_frame.array_section_array_id'
+                               '_array_structure_list_section.array_id'
+           '_map_segment.array_section_array_id'
+                               '_array_structure_list_section.array_id'
 save_
 save__array_structure_list_section.end
     _item_description.description
@@ -3065,6 +3083,14 @@ save__array_structure_list_section.index
     _item.category_id          array_structure_list_section
     _item.mandatory_code       implicit
     _item_type.code            int
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_data_frame.array_section_index'
+                               '_array_structure_list_section.index'
+           '_map_segment.array_section_index'
+                               '_array_structure_list_section.index'
      save_
 save__array_structure_list_section.start
     _item_description.description
@@ -3329,10 +3355,21 @@ save_ARRAY_STRUCTURE_LIST_AXIS
     _category_key.name
                                   '_array_structure_list_axis.axis_set_id'
                                   '_array_structure_list_axis.axis_id'
+                                  '_array_structure_list_axis.axis_equipment'
                                   '_array_structure_list_axis.variant'
      loop_
     _category_group.id           'inclusive_group'
                                  'array_data_group'
+     save_
+save__array_structure_list_axis.axis_equipment
+    _item_description.description
+;             This item is a pointer to _axis.equipment
+              in the AXIS category.
+;
+    _item.name                  '_array_structure_list_axis.axis_equipment'
+    _item.category_id             array_structure_list_axis
+    _item.mandatory_code          implicit
+    _item_type.code               ucode
      save_
 save__array_structure_list_axis.axis_id
     _item_description.description
@@ -3350,6 +3387,12 @@ save__array_structure_list_axis.axis_id
     _item.category_id          array_structure_list_axis
     _item.mandatory_code       yes
     _item_type.code            code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_array_structure_list.axis_id'
+                               '_array_structure_list_axis.axis_id'
      save_
 save__array_structure_list_axis.axis_set_id
     _item_description.description
@@ -5407,6 +5450,20 @@ save__axis.equipment
                               'axis specifying the downward direction'
                                source
                               'axis specifying the direction sample to source'
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_array_structure_list_axis.axis_equipment'
+                               '_axis.equipment'
+           '_diffrn_detector_axis.axis_equipment'
+                               '_axis.equipment'
+           '_diffrn_measurement_axis.axis_equipment'
+                               '_axis.equipment'
+           '_diffrn_scan_axis.axis_equipment'
+                               '_axis.equipment'
+           '_diffrn_scan_frame_axis.axis_equipment'
+                               '_axis.equipment'
      save_
 
 save__axis.equipment_component
@@ -5820,6 +5877,7 @@ save_DIFFRN_DATA_FRAME
      loop_
     _category_key.name             '_diffrn_data_frame.id'
                                    '_diffrn_data_frame.detector_element_id'
+                                   '_diffrn_data_frame.detector_element_detector_id'
                                    '_diffrn_data_frame.variant'
      loop_
     _category_group.id             'inclusive_group'
@@ -5864,6 +5922,16 @@ save__diffrn_data_frame.array_id
     _item_aliases.version         1.0
     _item_type.code               code
      save_
+save__diffrn_data_frame.array_section_array_id
+    _item_description.description
+;             This item is a pointer to _array_structure_list_section.array_id
+              in the ARRAY_STRUCTURE_LIST_SECTION category.
+;
+    _item.name                  '_diffrn_data_frame.array_section_array_id'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
 save__diffrn_data_frame.array_section_id
     _item_description.description
 ;            This item is a pointer to _array_structure_list_section.id
@@ -5873,6 +5941,16 @@ save__diffrn_data_frame.array_section_id
     _item.category_id             diffrn_data_frame
     _item.mandatory_code          implicit
     _item_type.code               code
+     save_
+save__diffrn_data_frame.array_section_index
+    _item_description.description
+;             This item is a pointer to _array_structure_list_section.index
+              in the ARRAY_STRUCTURE_LIST_SECTION category.
+;
+    _item.name                  '_diffrn_data_frame.array_section_index'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          implicit
+    _item_type.code               int
      save_
 save__diffrn_data_frame.binary_id
     _item_description.description
@@ -5983,6 +6061,16 @@ save__diffrn_data_frame.diffrn_id
     _item.mandatory_code          implicit
     _item_type.code               code
      save_
+save__diffrn_data_frame.detector_element_detector_id
+    _item_description.description
+;             This item is a pointer to _diffrn_detector_element.detector_id
+              in the DIFFRN_DETECTOR_ELEMENT category.
+;
+    _item.name                  '_diffrn_data_frame.detector_element_detector_id'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
 save__diffrn_data_frame.detector_element_id
     _item_description.description
 ;             This item is a pointer to _diffrn_detector_element.id
@@ -5995,6 +6083,22 @@ save__diffrn_data_frame.detector_element_id
     _item_aliases.dictionary      cif_img.dic
     _item_aliases.version         1.0
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_refln.frame_detector_element_id'
+                               '_diffrn_data_frame.detector_element_id'
+           '_diffrn_scan.frame_detector_element_id_end'
+                               '_diffrn_data_frame.detector_element_id'
+           '_diffrn_scan.frame_detector_element_id_start'
+                               '_diffrn_data_frame.detector_element_id'
+           '_diffrn_scan_frame.frame_detector_element_id'
+                               '_diffrn_data_frame.detector_element_id'
+           '_diffrn_scan_frame_axis.frame_detector_element_id'
+                               '_diffrn_data_frame.detector_element_id'
+           '_diffrn_scan_frame_monitor.frame_detector_element_id'
+                               '_diffrn_data_frame.detector_element_id'
      save_
 save__diffrn_data_frame.id
     _item_description.description
@@ -6390,10 +6494,21 @@ the ARRAY_STRUCTURE_LIST_AXIS.
      loop_
     _category_key.name          '_diffrn_detector_axis.detector_id'
                                 '_diffrn_detector_axis.axis_id'
+                                '_diffrn_detector_axis.axis_equipment'
                                 '_diffrn_detector_axis.variant'
      loop_
     _category_group.id           'inclusive_group'
                                  'diffrn_group'
+     save_
+save__diffrn_detector_axis.axis_equipment
+    _item_description.description
+;             This item is a pointer to _axis.equipment
+              in the AXIS category.
+;
+    _item.name                  '_diffrn_detector_axis.axis_equipment'
+    _item.category_id             diffrn_detector_axis
+    _item.mandatory_code          implicit
+    _item_type.code               ucode
      save_
 save__diffrn_detector_axis.axis_id
     _item_description.description
@@ -6567,6 +6682,12 @@ save__diffrn_detector_element.detector_id
     _item.category_id             diffrn_detector_element
     _item.mandatory_code          yes
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_data_frame.detector_element_detector_id'
+                               '_diffrn_detector_element.detector_id'
      save_
 save__diffrn_detector_element.diffrn_id
     _item_description.description
@@ -7041,10 +7162,21 @@ save_DIFFRN_MEASUREMENT_AXIS
                               '_diffrn_measurement_axis.measurement_device'
                               '_diffrn_measurement_axis.measurement_id'
                               '_diffrn_measurement_axis.axis_id'
+                              '_diffrn_measurement_axis.axis_equipment'
                               '_diffrn_measurement_axis.variant'
      loop_
     _category_group.id        'inclusive_group'
                               'diffrn_group'
+     save_
+save__diffrn_measurement_axis.axis_equipment
+    _item_description.description
+;             This item is a pointer to _axis.equipment
+              in the AXIS category.
+;
+    _item.name                  '_diffrn_measurement_axis.axis_equipment'
+    _item.category_id             diffrn_measurement_axis
+    _item.mandatory_code          implicit
+    _item_type.code               ucode
      save_
 save__diffrn_measurement_axis.axis_id
     _item_description.description
@@ -8094,10 +8226,21 @@ save_DIFFRN_REFLN
     _category_key.name             '_diffrn_refln.diffrn_id'
                                    '_diffrn_refln.id'
                                    '_diffrn_refln.frame_id'
+                                   '_diffrn_refln.frame_detector_element_id'
                                    '_diffrn_refln.variant'
      loop_
     _category_group.id             'inclusive_group'
                                    'diffrn_group'
+     save_
+save__diffrn_refln.frame_detector_element_id
+    _item_description.description
+;             This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_refln.frame_detector_element_id'
+    _item.category_id             diffrn_refln
+    _item.mandatory_code          implicit
+    _item_type.code               code
      save_
 save__diffrn_refln.frame_id
     _item_description.description
@@ -8873,6 +9016,32 @@ save__diffrn_scan.integration_time
     _item_range.minimum
                             .   0.0
      save_
+save__diffrn_scan.frame_detector_element_id_start
+    _item_description.description
+;             The value of this data item is the identifier of the
+              first frame detector element in the scan.
+
+              This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_scan.frame_detector_element_id_start'
+    _item.category_id             diffrn_scan
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
+save__diffrn_scan.frame_detector_element_id_end
+    _item_description.description
+;             The value of this data item is the identifier of the
+              last frame detector element in the scan.
+
+              This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_scan.frame_detector_element_id_end'
+    _item.category_id             diffrn_scan
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
 save__diffrn_scan.frame_id_start
     _item_description.description
 ;             The value of this data item is the identifier of the
@@ -9039,6 +9208,7 @@ save_DIFFRN_SCAN_AXIS
     _category_key.name
                                   '_diffrn_scan_axis.scan_id'
                                   '_diffrn_scan_axis.axis_id'
+                                  '_diffrn_scan_axis.axis_equipment'
                                   '_diffrn_scan_axis.variant'
      loop_
     _category_group.id           'inclusive_group'
@@ -9059,6 +9229,16 @@ save__diffrn_scan_axis.scan_id
     _item.category_id          diffrn_scan_axis
     _item.mandatory_code       yes
     _item_type.code            code
+     save_
+save__diffrn_scan_axis.axis_equipment
+    _item_description.description
+;             This item is a pointer to _axis.equipment
+              in the AXIS category.
+;
+    _item.name                  '_diffrn_scan_axis.axis_equipment'
+    _item.category_id             diffrn_scan_axis
+    _item.mandatory_code          implicit
+    _item_type.code               ucode
      save_
 save__diffrn_scan_axis.axis_id
     _item_description.description
@@ -9481,6 +9661,7 @@ save_DIFFRN_SCAN_FRAME
     _category_key.name
                                   '_diffrn_scan_frame.scan_id'
                                   '_diffrn_scan_frame.frame_id'
+                                  '_diffrn_scan_frame.frame_detector_element_id'
                                   '_diffrn_scan_frame.variant'
      loop_
     _category_group.id            'inclusive_group'
@@ -9502,6 +9683,16 @@ save__diffrn_scan_frame.diffrn_id
 ;
     _item.name                  '_diffrn_scan_frame.diffrn_id'
     _item.category_id             diffrn_scan_frame
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
+save__diffrn_scan_frame.frame_detector_element_id
+    _item_description.description
+;             This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_scan.frame.frame_detector_element_id'
+    _item.category_id             diffrn_scan
     _item.mandatory_code          implicit
     _item_type.code               code
      save_
@@ -9943,11 +10134,23 @@ save_DIFFRN_SCAN_FRAME_AXIS
      loop_
     _category_key.name
                                   '_diffrn_scan_frame_axis.frame_id'
+                                  '_diffrn_scan_frame_axis.frame_detector_element_id'
                                   '_diffrn_scan_frame_axis.axis_id'
+                                  '_diffrn_scan_frame_axis.axis_equipment'
                                   '_diffrn_scan_frame_axis.variant'
      loop_
     _category_group.id           'inclusive_group'
                                  'diffrn_group'
+     save_
+save__diffrn_scan_frame_axis.axis_equipment
+    _item_description.description
+;             This item is a pointer to _axis.equipment
+              in the AXIS category.
+;
+    _item.name                  '_diffrn_scan_frame_axis.axis_equipment'
+    _item.category_id             diffrn_scan_frame_axis
+    _item.mandatory_code          implicit
+    _item_type.code               ucode
      save_
 save__diffrn_scan_frame_axis.axis_id
     _item_description.description
@@ -10067,6 +10270,16 @@ save__diffrn_scan_frame_axis.displacement_rstrt_incr
     _item_default.value        0.0
     _item_type.code            float
     _item_units.code           'millimetres'
+     save_
+save__diffrn_scan_frame_axis.frame_detector_element_id
+    _item_description.description
+;             This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_scan_frame_axis.frame_detector_element_id'
+    _item.category_id             diffrn_scan_frame_axis
+    _item.mandatory_code          implicit
+    _item_type.code               code
      save_
 save__diffrn_scan_frame_axis.frame_id
     _item_description.description
@@ -10199,6 +10412,7 @@ save_DIFFRN_SCAN_FRAME_MONITOR
                                    '_diffrn_scan_frame_monitor.detector_id'
                                    '_diffrn_scan_frame_monitor.scan_id'
                                    '_diffrn_scan_frame_monitor.frame_id'
+                                   '_diffrn_scan_frame_monitor.frame_detector_element_id'
                                    '_diffrn_scan_frame_monitor.variant'
      loop_
     _category_group.id             'inclusive_group'
@@ -10376,6 +10590,16 @@ save__diffrn_scan_frame_monitor.diffrn_id
               the DIFFRN category.
 ;
     _item.name                  '_diffrn_scan_frame_monitor.diffrn_id'
+    _item.category_id             diffrn_scan_frame_monitor
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
+save__diffrn_scan_frame_monitor.frame_detector_element_id
+    _item_description.description
+;             This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_scan_frame_monitor.frame_detector_element_id'
     _item.category_id             diffrn_scan_frame_monitor
     _item.mandatory_code          implicit
     _item_type.code               code
@@ -10971,6 +11195,12 @@ save__map.diffrn_id
     _item.category_id             map
     _item.mandatory_code          implicit
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_map_segment.diffrn_id'
+                               '_map.diffrn_id'
      save_
 save__map.entry_id
     _item_description.description
@@ -10981,6 +11211,12 @@ save__map.entry_id
     _item.category_id             map
     _item.mandatory_code          implicit
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_map_segment.entry_id'
+                               '_map.entry_id'
      save_
 save__map.id
     _item_description.description
@@ -11028,6 +11264,8 @@ save_MAP_SEGMENT
     _category.mandatory_code       no
      loop_
     _category_key.name             '_map_segment.id'
+                                   '_map_segment.diffrn_id'
+                                   '_map_segment.entry_id'
                                    '_map_segment.map_id'
                                    '_map_segment.variant'
      loop_
@@ -11085,6 +11323,16 @@ save__map_segment.array_id
     _item.mandatory_code          implicit
     _item_type.code               code
      save_
+save__map_segment.array_section_array_id
+    _item_description.description
+;             This item is a pointer to _array_structure_list_section.array_id
+              in the ARRAY_STRUCTURE_LIST_SECTION category.
+;
+    _item.name                  '_map_segment.array_section_array_id'
+    _item.category_id             map_segment
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
 save__map_segment.array_section_id
     _item_description.description
 ;             This item is a pointer to _array_structure_list_section.id
@@ -11094,6 +11342,16 @@ save__map_segment.array_section_id
     _item.category_id             map_segment
     _item.mandatory_code          yes
     _item_type.code               code
+     save_
+save__map_segment.array_section_index
+    _item_description.description
+;             This item is a pointer to _array_structure_list_section.index
+              in the ARRAY_STRUCTURE_LIST_SECTION category.
+;
+    _item.name                  '_map_segment.array_section_index'
+    _item.category_id             map_segment
+    _item.mandatory_code          implicit
+    _item_type.code               int
      save_
 save__map_segment.binary_id
     _item_description.description
@@ -11157,6 +11415,26 @@ save__map_segment.mask_array_section_id
     _item.mandatory_code          yes
     _item_type.code               code
     save_
+save__map_segment.diffrn_id
+    _item_description.description
+;             This item is a pointer to _map.diffrn_id
+              in the MAP category.
+;
+    _item.name                  '_map_segment.diffrn_id'
+    _item.category_id             map_segment
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
+save__map_segment.entry_id
+    _item_description.description
+;             This item is a pointer to _map.entry_id
+              in the MAP category.
+;
+    _item.name                  '_map_segment.entry_id'
+    _item.category_id             map_segment
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
 save__map_segment.id
     _item_description.description
 ;             The value of _map_segment.id must uniquely
