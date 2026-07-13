@@ -10133,6 +10133,7 @@ save_DIFFRN_SCAN_FRAME_AXIS
      loop_
     _category_key.name
                                   '_diffrn_scan_frame_axis.frame_id'
+                                  '_diffrn_scan_frame_axis.frame_detector_element_id'
                                   '_diffrn_scan_frame_axis.axis_id'
                                   '_diffrn_scan_frame_axis.axis_equipment'
                                   '_diffrn_scan_frame_axis.variant'
