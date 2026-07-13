@@ -5443,6 +5443,8 @@ save__axis.equipment
                                '_axis.equipment'
            '_diffrn_measurement_axis.axis_equipment'
                                '_axis.equipment'
+           '_diffrn_scan_axis.axis_equipment'
+                               '_axis.equipment'
      save_
 
 save__axis.equipment_component
@@ -9115,6 +9117,16 @@ save__diffrn_scan_axis.scan_id
     _item.category_id          diffrn_scan_axis
     _item.mandatory_code       yes
     _item_type.code            code
+     save_
+save__diffrn_scan_axis.axis_equipment
+    _item_description.description
+;             This item is a pointer to _axis.equipment
+              in the AXIS category.
+;
+    _item.name                  '_diffrn_scan_axis.axis_equipment'
+    _item.category_id             diffrn_scan_axis
+    _item.mandatory_code          implicit
+    _item_type.code               ucode
      save_
 save__diffrn_scan_axis.axis_id
     _item_description.description
