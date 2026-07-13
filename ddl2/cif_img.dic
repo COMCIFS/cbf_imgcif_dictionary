@@ -10411,6 +10411,7 @@ save_DIFFRN_SCAN_FRAME_MONITOR
                                    '_diffrn_scan_frame_monitor.detector_id'
                                    '_diffrn_scan_frame_monitor.scan_id'
                                    '_diffrn_scan_frame_monitor.frame_id'
+                                   '_diffrn_scan_frame_monitor.frame_detector_element_id'
                                    '_diffrn_scan_frame_monitor.variant'
      loop_
     _category_group.id             'inclusive_group'
