@@ -3344,6 +3344,16 @@ save_ARRAY_STRUCTURE_LIST_AXIS
     _category_group.id           'inclusive_group'
                                  'array_data_group'
      save_
+save__array_structure_list_axis.axis_equipment
+    _item_description.description
+;             This item is a pointer to _axis.equipment
+              in the AXIS category.
+;
+    _item.name                  '_array_structure_list_axis.axis_equipment'
+    _item.category_id             array_structure_list_axis
+    _item.mandatory_code          implicit
+    _item_type.code               ucode
+     save_
 save__array_structure_list_axis.axis_id
     _item_description.description
 ;             The value of this data item is the identifier of one of
@@ -5423,6 +5433,12 @@ save__axis.equipment
                               'axis specifying the downward direction'
                                source
                               'axis specifying the direction sample to source'
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_array_structure_list_axis.axis_equipment'
+                               '_axis.equipment'
      save_
 
 save__axis.equipment_component
