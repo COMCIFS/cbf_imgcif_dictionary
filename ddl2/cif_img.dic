@@ -3008,6 +3008,12 @@ save__array_structure_list_section.array_id
     _item.category_id             array_structure_list_section
     _item.mandatory_code          implicit
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_data_frame.array_section_array_id'
+                               '_array_structure_list_section.array_id'
 save_
 save__array_structure_list_section.end
     _item_description.description
@@ -5902,6 +5908,16 @@ save__diffrn_data_frame.array_id
     _item_aliases.alias_name    '_diffrn_frame_data.array_id'
     _item_aliases.dictionary      cif_img.dic
     _item_aliases.version         1.0
+    _item_type.code               code
+     save_
+save__diffrn_data_frame.array_section_array_id
+    _item_description.description
+;             This item is a pointer to _array_structure_list_section.array_id
+              in the ARRAY_STRUCTURE_LIST_SECTION category.
+;
+    _item.name                  '_diffrn_data_frame.array_section_array_id'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          implicit
     _item_type.code               code
      save_
 save__diffrn_data_frame.array_section_id
