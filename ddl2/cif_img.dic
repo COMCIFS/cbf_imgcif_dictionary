@@ -6047,6 +6047,8 @@ save__diffrn_data_frame.detector_element_id
                                '_diffrn_data_frame.detector_element_id'
            '_diffrn_scan.frame_detector_element_id'
                                '_diffrn_data_frame.detector_element_id'
+           '_diffrn_scan_frame_axis.frame_detector_element_id'
+                               '_diffrn_data_frame.detector_element_id'
      save_
 save__diffrn_data_frame.id
     _item_description.description
@@ -10205,6 +10207,16 @@ save__diffrn_scan_frame_axis.displacement_rstrt_incr
     _item_default.value        0.0
     _item_type.code            float
     _item_units.code           'millimetres'
+     save_
+save__diffrn_scan_frame_axis.frame_detector_element_id
+    _item_description.description
+;             This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_scan_frame_axis.frame_detector_element_id'
+    _item.category_id             diffrn_scan_frame_axis
+    _item.mandatory_code          implicit
+    _item_type.code               code
      save_
 save__diffrn_scan_frame_axis.frame_id
     _item_description.description
