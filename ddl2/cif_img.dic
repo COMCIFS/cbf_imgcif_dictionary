@@ -6041,6 +6041,8 @@ save__diffrn_data_frame.detector_element_id
     _item_linked.parent_name
            '_diffrn_refln.frame_detector_element_id'
                                '_diffrn_data_frame.detector_element_id'
+           '_diffrn_scan.frame_detector_element_id_end'
+                               '_diffrn_data_frame.detector_element_id'
      save_
 save__diffrn_data_frame.id
     _item_description.description
@@ -8948,6 +8950,19 @@ save__diffrn_scan.integration_time
     _item_range.maximum
     _item_range.minimum
                             .   0.0
+     save_
+save__diffrn_scan.frame_detector_element_id_end
+    _item_description.description
+;             The value of this data item is the identifier of the
+              last frame detector element in the scan.
+
+              This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_scan.frame_detector_element_id_end'
+    _item.category_id             diffrn_scan
+    _item.mandatory_code          implicit
+    _item_type.code               code
      save_
 save__diffrn_scan.frame_id_start
     _item_description.description
