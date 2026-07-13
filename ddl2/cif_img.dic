@@ -6035,6 +6035,12 @@ save__diffrn_data_frame.detector_element_id
     _item_aliases.dictionary      cif_img.dic
     _item_aliases.version         1.0
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_refln.frame_detector_element_id'
+                               '_diffrn_data_frame.detector_element_id'
      save_
 save__diffrn_data_frame.id
     _item_description.description
@@ -8158,6 +8164,16 @@ save_DIFFRN_REFLN
      loop_
     _category_group.id             'inclusive_group'
                                    'diffrn_group'
+     save_
+save__diffrn_refln.frame_detector_element_id
+    _item_description.description
+;             This item is a pointer to _diffrn_data_frame.detector_element_id
+              in the DIFFRN_DATA_FRAME category.
+;
+    _item.name                  '_diffrn_refln.frame_detector_element_id'
+    _item.category_id             diffrn_refln
+    _item.mandatory_code          implicit
+    _item_type.code               code
      save_
 save__diffrn_refln.frame_id
     _item_description.description
