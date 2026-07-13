@@ -5441,6 +5441,8 @@ save__axis.equipment
                                '_axis.equipment'
            '_diffrn_detector_axis.axis_equipment'
                                '_axis.equipment'
+           '_diffrn_measurement_axis.axis_equipment'
+                               '_axis.equipment'
      save_
 
 save__axis.equipment_component
@@ -7089,6 +7091,16 @@ save_DIFFRN_MEASUREMENT_AXIS
      loop_
     _category_group.id        'inclusive_group'
                               'diffrn_group'
+     save_
+save__diffrn_measurement_axis.axis_equipment
+    _item_description.description
+;             This item is a pointer to _axis.equipment
+              in the AXIS category.
+;
+    _item.name                  '_diffrn_measurement_axis.axis_equipment'
+    _item.category_id             diffrn_measurement_axis
+    _item.mandatory_code          implicit
+    _item_type.code               ucode
      save_
 save__diffrn_measurement_axis.axis_id
     _item_description.description
