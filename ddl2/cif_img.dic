@@ -6493,6 +6493,7 @@ the ARRAY_STRUCTURE_LIST_AXIS.
      loop_
     _category_key.name          '_diffrn_detector_axis.detector_id'
                                 '_diffrn_detector_axis.axis_id'
+                                '_diffrn_detector_axis.axis_equipment'
                                 '_diffrn_detector_axis.variant'
      loop_
     _category_group.id           'inclusive_group'
