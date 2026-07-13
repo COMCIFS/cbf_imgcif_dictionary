@@ -6023,6 +6023,16 @@ save__diffrn_data_frame.diffrn_id
     _item.mandatory_code          implicit
     _item_type.code               code
      save_
+save__diffrn_data_frame.detector_element_detector_id
+    _item_description.description
+;             This item is a pointer to _diffrn_detector_element.detector_id
+              in the DIFFRN_DETECTOR_ELEMENT category.
+;
+    _item.name                  '_diffrn_data_frame.detector_element_detector_id'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
 save__diffrn_data_frame.detector_element_id
     _item_description.description
 ;             This item is a pointer to _diffrn_detector_element.id
@@ -6633,6 +6643,12 @@ save__diffrn_detector_element.detector_id
     _item.category_id             diffrn_detector_element
     _item.mandatory_code          yes
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_data_frame.detector_element_detector_id'
+                               '_diffrn_detector_element.detector_id'
      save_
 save__diffrn_detector_element.diffrn_id
     _item_description.description
