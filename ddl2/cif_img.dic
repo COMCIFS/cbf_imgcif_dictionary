@@ -11185,6 +11185,12 @@ save__map.diffrn_id
     _item.category_id             map
     _item.mandatory_code          implicit
     _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_map_segment.diffrn_id'
+                               '_map.diffrn_id'
      save_
 save__map.entry_id
     _item_description.description
@@ -11391,6 +11397,16 @@ save__map_segment.mask_array_section_id
     _item.mandatory_code          yes
     _item_type.code               code
     save_
+save__map_segment.diffrn_id
+    _item_description.description
+;             This item is a pointer to _map.diffrn_id
+              in the MAP category.
+;
+    _item.name                  '_map_segment.diffrn_id'
+    _item.category_id             map_segment
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
 save__map_segment.id
     _item_description.description
 ;             The value of _map_segment.id must uniquely
